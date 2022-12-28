@@ -19,6 +19,7 @@ import (
 	"time"
 )
 
+//go:embed static/*
 var static embed.FS
 
 var version = "devel"

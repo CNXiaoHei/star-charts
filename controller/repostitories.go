@@ -32,7 +32,7 @@ func IntValueFormatter(v interface{}) string {
 	return fmt.Sprintf("%.0f", v)
 }
 
-func GetRepoChart(g *github.Github, cache cache.Redis) http.Handler {
+func GetRepoChart(g *github.Github, cache *cache.Redis) http.Handler {
 	return httperr.NewF(func(w http.ResponseWriter, r *http.Request) error {
 		name := fmt.Sprintf("%s/%s", mux.Vars(r)["owner"], mux.Vars(r)["repo"])
 		log := log.WithField("repo", name)
